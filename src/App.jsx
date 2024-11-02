@@ -2,7 +2,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import SignInPage from "./pages/signIn";
 import SignUpPage from "./pages/signUp";
-import ForgotPassword from "./components/Fragments/ForgotPassword";
+import ForgotPassword from "./components/fragments/ForgotPassword";
 import ErrorRouter from "./pages/errorRoute";
 import { useState, useEffect } from 'react';
 import DashboardPage from './pages/dashboard';

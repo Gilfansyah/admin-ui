@@ -1,10 +1,12 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
-import SignInPage from "./pages/SignIn";
-import SignUpPage from "./pages/SignUp";
+import SignInPage from "./pages/signIn";
+import SignUpPage from "./pages/signUp";
 import ForgotPassword from "./components/Fragments/ForgotPassword";
 import ErrorRouter from "./pages/errorRoute";
 import { useState, useEffect } from 'react';
+import DashboardPage from './pages/dashboard';
+import BalancePage from './pages/balance';
 
 // Komponen ProtectedRoute
 const ProtectedRoute = ({ element }) => {
@@ -29,7 +31,7 @@ const App = () => {
   const myRouter = createBrowserRouter([
     {
       path: "/",
-      element: <ProtectedRoute element={<div>Halaman Utama</div>} />,
+      element: <DashboardPage />,
       errorElement: <ErrorRouter />,
     },
     {
@@ -43,6 +45,10 @@ const App = () => {
     {
       path: "/forgot-password",
       element: <ForgotPassword />,
+    },
+    {
+      path: "/balance",
+      element: <BalancePage />,
     },
   ]);
 

@@ -1,5 +1,5 @@
-import Button from "../Elements/Button";
-import LabeledInput from "../Elements/LabeledInput";
+import Button from "../elements/Button";
+import LabeledInput from "../elements/LabeledInput";
 
 const FormSignUp = () => {
   return (

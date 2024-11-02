@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
-import { Icon } from "../Elements/Icon";
-import Logo  from "../Elements/Logo";
+import { Icon } from "../elements/Icon";
+import Logo  from "../elements/Logo";
 
 const Navbar = () => {
   const menus = [

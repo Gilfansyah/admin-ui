@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from "../Elements/Logo";
-import Button from "../Elements/Button";
-import LabeledInput from "../Elements/LabeledInput";
+import Logo from "../elements/Logo";
+import Button from "../elements/Button";
+import LabeledInput from "../elements/LabeledInput";
 import { Link } from "react-router-dom";
 
 const ForgotPassword = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from "../Elements/Logo";
+import Logo from "../elements/Logo";
 import { Link } from "react-router-dom";
 
 

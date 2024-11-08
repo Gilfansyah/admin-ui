@@ -3,36 +3,21 @@ import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom"
 import SignInPage from "./pages/signIn";
 import SignUpPage from "./pages/signUp";
 import ForgotPassword from "./components/fragments/ForgotPassword";
-import ErrorRouter from "./pages/errorRoute";
+import ErrorRoute from './pages/errorRoute';
 import { useState, useEffect } from 'react';
-import DashboardPage from './pages/dashboard';
-import BalancePage from './pages/balance';
+import Dashboard from "./pages/dashboard";
+import Balance from './pages/balance';
 
-// Komponen ProtectedRoute
-const ProtectedRoute = ({ element }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+import Goals from './pages/Goals';
 
-  // Simulasi pengecekan login, bisa diganti dengan pengecekan sesungguhnya dari localStorage atau cookie
-  useEffect(() => {
-    const loggedIn = localStorage.getItem("isLoggedIn");
-    setIsLoggedIn(loggedIn);
-  }, []);
-
-  // Jika belum login, arahkan ke halaman login
-  if (!isLoggedIn) {
-    return <Navigate to="/login" />;
-  }
-
-  // Jika sudah login, tampilkan elemen yang dilindungi
-  return element;
-};
 
 const App = () => {
   const myRouter = createBrowserRouter([
     {
       path: "/",
-      element: <DashboardPage />,
-      errorElement: <ErrorRouter />,
+      // element: <ProtectedRoute element={<Dashboard />} />,
+      element: <Dashboard />,
+      errorElement: < ErrorRoute />,
     },
     {
       path: "/login",
@@ -48,7 +33,11 @@ const App = () => {
     },
     {
       path: "/balance",
-      element: <BalancePage />,
+      element: <Balance />,
+    },
+    {
+      path: "/goals",
+      element: <Goals />,
     },
   ]);
 

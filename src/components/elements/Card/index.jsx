@@ -1,9 +1,13 @@
-const Card = () => {
-    return (
+/* eslint-disable react/prop-types */
+
+const Card = (props) => {
+  return (
     <>
-        <div className="text-lg text-gray-02 mb-2">Title</div>
-      <div className="bg-white rounded-lg px-6 py-5 shadow-xl">Description</div>
+      <div className="bg-white rounded-lg px-6 py-5 shadow-xl flex flex-col min-h-[150px]">
+        <p className="text-gray-700 mb-4"> {props.label} </p>
+      </div>
     </>
-    );
-    };
-    export default Card;
+  );
+};
+
+export default Card;

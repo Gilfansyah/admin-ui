@@ -1,12 +1,15 @@
-/* eslint-disable react/prop-types */
+import React from "react";
 
-const Card = (props) => {
+const Card = ({ title, children, className, variant }) => {
   return (
-    <>
-      <div className="bg-white rounded-lg px-6 py-5 shadow-xl flex flex-col min-h-[150px]">
-        <p className="text-gray-700 mb-4"> {props.label} </p>
+    <div className={`card-container mb-6 ${variant}`}>
+      {/* Title di luar kotak card */}
+      {title && <h2 className="text-lg text-gray-02 mb-4">{title}</h2>}
+      {/* Card container */}
+      <div className={`bg-white rounded-lg p-6 shadow-lg ${className} min-h-[320px]`}>
+        {children}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
-import Card from "../components/Elements/Card";
-import MainLayout from "../components/Layouts/MainLayout";
+import Card from "../components/elements/Card";
+import MainLayout from "../components/layouts/MainLayout";
 
 const GoalPage = () => {
   return (

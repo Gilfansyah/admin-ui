@@ -1,4 +1,4 @@
-import { children } from "react";
+import React from "react";
 import Header from "../fragments/Header";
 import Navbar from "../fragments/Navbar";
 

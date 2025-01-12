@@ -12,9 +12,16 @@ const MainLayout = (props) => {
     const { theme } = useContext(ThemeContext);
     const { msg, setMsg, open, setOpen, isLoading, setIsLoading } = 
        useContext(NotifContext);
-
+    
+    const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
+    
+       const toggleTheme = () => {
+         setIsDarkMode(!isDarkMode);
+       };
+       
     return (
-      <div className={`flex bg-special-mainBg w-screen min-h-screen max-w-full ${theme.name}`}>
+      <div className={`flex w-screen min-h-screen max-w-full ${isDarkMode ? 'bg-gray-800' : 'bg-special-mainBg'}`}>
+
         {/* navbar start*/}
 <Navbar />
 {/* navbar end*/}

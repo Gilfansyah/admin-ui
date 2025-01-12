@@ -1,11 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+
+
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
+  
   theme: {
-    
+    darkMode: "class", // Aktifkan mode "class"  
       extend: {
         fontFamily: {
           body: ['Inter'],
@@ -35,4 +38,3 @@ export default {
   },
   plugins: [],
 }
-

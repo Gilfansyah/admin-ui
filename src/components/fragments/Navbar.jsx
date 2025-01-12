@@ -17,9 +17,10 @@ const Navbar = () => {
     { name: "theme-pink", bgcolor: "bg-[#DB7093]", color: "#DB7093" },
     { name: "theme-brown", bgcolor: "bg-[#8B4513]", color: "#8B4513" },
   ];
-  const {  theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext);
   const { setIsLoggedIn, setName, name } = useContext(AuthContext);
   const { setMsg, setOpen, setIsLoading } = useContext(NotifContext);
+
   const navigate = useNavigate();
 
   const refreshToken = localStorage.getItem("refreshToken");
@@ -35,11 +36,13 @@ const Navbar = () => {
       
       setIsLoading(false);
       setOpen(true);
-      setMsg({ severity: "success", desc: "Logout Success"});
+      setMsg({ severity: "success", desc: "Logout Success" });
+
+      console.log("Logout Snackbar:", { severity: "success", desc: "Logout Success" });
 
       setIsLoggedIn(false);
       setName("");
-      localStorage.removeItem("refeshToken");
+      localStorage.removeItem("refreshToken");
 
       navigate("/login");
     } catch (error){
@@ -47,9 +50,12 @@ const Navbar = () => {
 
       if (error.response) {
         setOpen(true);
-        setMsg({ severity: "error", desc: error.response.data.msg});
+        setMsg({ severity: "error", desc: error.response.data.msg });      
       }
+      // alert("Logout failed. Please try again.");
+      // console.log(error);
     }
+
     setIsLoggedIn(false);
     setName("");
     setIsLoading(false);

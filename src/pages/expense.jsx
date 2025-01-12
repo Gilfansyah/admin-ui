@@ -1,6 +1,5 @@
 import Card from "../components/elements/Card";
 import MainLayout from "../components/layouts/MainLayout";
-
 const ExpensePage = () => {
   return (
     <MainLayout type="expense">

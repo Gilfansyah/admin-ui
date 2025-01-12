@@ -12,10 +12,10 @@ import { AuthContext } from "../../context/authContext";
 import { NotifContext } from "../../context/notifContext";
 
 const FormSignIn = () => {
-  const [msg, setMsg] = useState();
-  const [open, setOpen] = useState(true);
+  // const [msg, setMsg] = useState();
+  // const [open, setOpen] = useState(true);
+  const { msg, setMsg, open, setOpen, setIsLoading } = useContext(NotifContext);
   const { setIsLoggedIn, setName } = useContext(AuthContext);
-  const { setIsLoading } = useContext(NotifContext);
 
   const navigate = useNavigate();
 

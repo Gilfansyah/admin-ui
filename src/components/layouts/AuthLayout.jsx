@@ -6,14 +6,22 @@ import { NotifContext } from '../../context/notifContext';
 import SimpleBackdrop from '../elements/Backdrop';
 import CustomizedSnackbars from '../elements/Snackbar';
 import * as motion from "motion/react-client";
+import { ThemeContext } from '../../context/ThemeContext';
 
 const AuthLayout = (props) => {
   const { children, type } = props;
-  const { msg, setMsg, open, setOpen, isLoading, setIsLoading } = 
+  const { msg, setMsg, open, setOpen, isLoading, setIsLoading } =
+   
    useContext(NotifContext);
-  
+
+   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
+
+   const toggleTheme = () => {
+     setIsDarkMode(!isDarkMode);
+   };
+
    return (
-    <div className="flex justify-center min-h-screen items-center bg-special-mainBg">
+    <div className={`flex justify-center min-h-screen items-center ${isDarkMode ? 'bg-gray-800' : 'bg-special-mainBg'}`}>
       {isLoading && (
 <SimpleBackdrop isLoading={isLoading} setIsLoading={setIsLoading} />
 )}
@@ -46,6 +54,16 @@ setOpen={setOpen}
         <div className="mt-16">
         {children} 
         </div>
+
+        <div className="flex justify-center my-4">
+          <button
+            className="text-sm font-bold px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-700"
+            onClick={toggleTheme}
+          >
+            {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          </button>
+        </div>
+
         {/* form end */}
 
         {/* teks start */}

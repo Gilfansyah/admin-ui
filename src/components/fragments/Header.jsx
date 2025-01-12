@@ -3,6 +3,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import { ThemeContext } from "../../context/ThemeContext";
 import { AuthContext } from "../../context/authContext";
 import React, { useContext } from "react";
+
 const Header = () => {
   const { theme } = useContext(ThemeContext);
   const { name } = useContext(AuthContext);

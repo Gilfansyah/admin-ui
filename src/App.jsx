@@ -11,6 +11,7 @@ import ExpensePage from './pages/expense';
 import Goals from './pages/Goals';
 import { useContext } from "react";
 import { AuthContext } from "./context/authContext";
+import { ThemeContextProvider } from './context/ThemeContext';
 
 const App = () => {
   const { isLoggedIn } = useContext(AuthContext);
